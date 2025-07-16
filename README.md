@@ -1,70 +1,57 @@
-cgo-physx
+以下是整理好的Markdown格式的README.md文件内容：
+# cgo-physx
 
 使用Go语言通过CGO调用NVIDIA PhysX物理引擎的示例项目（Windows平台）。
 
-环境要求
+## 环境要求
 
-• 操作系统: Windows 10/11 64位
+- **操作系统**: Windows 10/11 64位  
+- **Go版本**: 1.18或更高  
+- **开发工具**:  
+  - Visual Studio 2022 (包含MSVC工具链)  
+  - Git  
+- **依赖库**:  
+  - [PhysX 5.1 SDK](https://github.com/NVIDIA-Omniverse/PhysX)  
 
-• Go版本: 1.18或更高
+## 快速开始
 
-• 开发工具: 
+### 1. 获取PhysX源码
 
-  • Visual Studio 2022 (包含MSVC工具链)
-
-  • Git
-
-• 依赖库: 
-
-  • https://github.com/NVIDIA-Omniverse/PhysX
-
-快速开始
-
-1. 获取PhysX源码
-
+bash
 git clone https://github.com/NVIDIA-Omniverse/PhysX.git
 cd PhysX
 
 
-2. 生成项目文件
+### 2. 生成项目文件
 
-运行generate_project.bat脚本，选择CPU-only配置。
+运行`generate_project.bat`脚本，选择CPU-only配置。
 
-3. 编译PhysX库
+### 3. 编译PhysX库
 
-1. 使用Visual Studio 2022打开解决方案文件：
+1. 使用Visual Studio 2022打开解决方案文件：  
+   `PhysX/physx/compiler/vc17win64/PhysXSDK.sln`  
+2. 选择"Checked"配置  
+3. 编译整个解决方案  
 
-   PhysX/physx/compiler/vc17win64/PhysXSDK.sln
-   
-2. 选择"Checked"配置
-3. 编译整个解决方案
+### 4. 复制库文件
 
-4. 复制库文件
+从以下目录复制必要的DLL和LIB文件到项目的`physx/lib/`目录：  
+`PhysX\bin\win.x86_64.vc143.mt\checked\`  
 
-从以下目录复制必要的DLL和LIB文件到项目的physx/lib/目录：
+需要复制的文件包括：  
+- `PhysX_64.dll`  
+- `PhysXCommon_64.dll`  
+- `PhysXFoundation_64.dll`  
+- `PhysXCooking_64.dll`  
+- 对应的`.lib`文件  
 
-PhysX\bin\win.x86_64.vc143.mt\checked\
+### 5. 构建并运行示例
 
-
-需要复制的文件包括：
-• PhysX_64.dll
-
-• PhysXCommon_64.dll
-
-• PhysXFoundation_64.dll
-
-• PhysXCooking_64.dll
-
-• 对应的.lib文件
-
-5. 构建并运行示例
-
+bash
 build.bat
 
 
-这将编译并生成main.go对应的可执行文件。
-
-项目结构
+## 项目结构
 
 
 cgo-physx/
@@ -75,8 +62,8 @@ cgo-physx/
 └── build.bat       # 构建脚本
 
 
-注意事项
+## 注意事项
 
-1. 确保使用64位环境进行编译
-2. 所有路径中不要包含中文或特殊字符
-3. 如果遇到链接错误，请检查库文件路径是否正确
+1. 确保使用64位环境进行编译  
+2. 所有路径中不要包含中文或特殊字符  
+3. 如果遇到链接错误，请检查库文件路径是否正确  
