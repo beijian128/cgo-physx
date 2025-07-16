@@ -1,4 +1,3 @@
-以下是整理好的Markdown格式的README.md文件内容：
 # cgo-physx
 
 使用Go语言通过CGO调用NVIDIA PhysX物理引擎的示例项目（Windows平台）。
