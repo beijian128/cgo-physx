@@ -1,0 +1,6 @@
+.idea/
+*.dll
+*.lib
+*.exe
+*.exp
+.vscode/
