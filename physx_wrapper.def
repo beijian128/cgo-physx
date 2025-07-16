@@ -1,0 +1,10 @@
+LIBRARY physx_wrapper
+EXPORTS
+    physx_create_physics
+    physx_release_physics
+    physx_create_scene
+    physx_release_scene
+    physx_simulate
+    physx_fetch_results
+    physx_create_rigid_dynamic
+    physx_create_rigid_static
