@@ -1,5 +1,3 @@
-我来帮你整理和修改这个README.md文件，使其更加清晰和专业。以下是修改后的版本：
-
 cgo-physx
 
 使用Go语言通过CGO调用NVIDIA PhysX物理引擎的示例项目（Windows平台）。
